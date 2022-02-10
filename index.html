@@ -61,5 +61,58 @@
                     </tr>
                   </table>
                   <hr>
-    
+                  <h3>Modular Multiplicative Inverse</h3>
+                  <blockquote>A modular multiplicative inverse of an integer  is an integer  such that  is congruent to  modular some modulus . To write it in a formal way: we want to find an integer  so that
+
+                    We will also denote  simply with .
+                    
+                    We should note that the modular inverse does not always exist. For example, let , . By checking all possible values modulo  is should become clear that we cannot find  satisfying the above equation. It can be proven that the modular inverse exists if and only if  and  are relatively prime (i.e. ).
+                    
+                    In this article, we present two methods for finding the modular inverse in case it exists, and one method for finding the modular inverse for all numbers in linear time.</blockquote>
+                    <a href="https://www.geeksforgeeks.org/print-fibonacci-series-reverse-order/>Link to Modular Multiplicative Inverse</a>
+                    <pre>
+                        // Java Program to print Fibonacci
+// series in reverse order
+import java.io.*;
+ 
+class GFG {
+     
+    static void reverseFibonacci(int n)
+    {
+        int a[] = new int[n];
+     
+        // assigning first and second elements
+        a[0] = 0;
+        a[1] = 1;
+     
+        for (int i = 2; i < n; i++)
+        {
+     
+            // storing sum in the
+            // preceding location
+            a[i] = a[i - 2] + a[i - 1];
+        }
+     
+        for (int i = n - 1; i >= 0; i--)
+        {
+     
+            // printing array in
+            // reverse order
+            System.out.print(a[i] +" ");
+        }
+    }
+     
+    // Driver function
+    public static void main(String[] args)
+    {
+        int n = 5;
+        reverseFibonacci(n);
+     
+    }
+}
+ 
+// This code is contributed by vt_m.
+     </pre>
+</body>
+</html>
 
