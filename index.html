@@ -61,7 +61,7 @@
                     </tr>
                   </table>
                   <hr>
-                  <h3>Modular Multiplicative Inverse</h3>
+                  <h3>Fibonacci Coding</h3>
                   <blockquote>A modular multiplicative inverse of an integer  is an integer  such that  is congruent to  modular some modulus . To write it in a formal way: we want to find an integer  so that
 
                     We will also denote  simply with .
@@ -71,46 +71,18 @@
                     In this article, we present two methods for finding the modular inverse in case it exists, and one method for finding the modular inverse for all numbers in linear time.</blockquote>
                     <a href="https://www.geeksforgeeks.org/print-fibonacci-series-reverse-order/>Link to Modular Multiplicative Inverse</a>
                     <pre>
-                        // Java Program to print Fibonacci
-// series in reverse order
-import java.io.*;
- 
-class GFG {
-     
-    static void reverseFibonacci(int n)
-    {
-        int a[] = new int[n];
-     
-        // assigning first and second elements
-        a[0] = 0;
-        a[1] = 1;
-     
-        for (int i = 2; i < n; i++)
-        {
-     
-            // storing sum in the
-            // preceding location
-            a[i] = a[i - 2] + a[i - 1];
-        }
-     
-        for (int i = n - 1; i >= 0; i--)
-        {
-     
-            // printing array in
-            // reverse order
-            System.out.print(a[i] +" ");
-        }
-    }
-     
-    // Driver function
-    public static void main(String[] args)
-    {
-        int n = 5;
-        reverseFibonacci(n);
-     
-    }
-}
- 
+                        pair<int, int> fib (int n) {
+                            if (n == 0)
+                                return {0, 1};
+                        
+                            auto p = fib(n >> 1);
+                            int c = p.first * (2 * p.second - p.first);
+                            int d = p.first * p.first + p.second * p.second;
+                            if (n & 1)
+                                return {d, c + d};
+                            else
+                                return {c, d};
+                        }
 // This code is contributed by vt_m.
      </pre>
 </body>
